@@ -36,7 +36,12 @@ sudo ldconfig
 5. Check !!
 
 ls /opt/nvidia/deepstream/deepstream-4.0/sources/
-cd /opt/nvidia/deepstream/deepstream-4.0/sources/
+cd /opt/nvidia/deepstream/deepstream-4.0/sources/objectDetector_SSD
+
+즉, 이 위치에서 빌드하고 실행하면 된다.
+
+nvidia@nvidia:/opt/nvidia/deepstream/deepstream-4.0/sources/objectDetector_SSD
+
 
 export CUDA_VER=10.0
 
@@ -50,4 +55,4 @@ ls
 deepstream-app -c deepstream_app_config_ssd.txt
 
 
-nvidia@nvidia:/opt/nvidia/deepstream/deepstream-4.0/sources/objectDetector_SSD
+
