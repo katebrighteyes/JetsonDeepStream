@@ -88,4 +88,6 @@ ls
 --> sample_ssd_relu6.uff 파일을 확인한다.
 
 *실행
+(잊지말자 파워 맥스 밎추고 sudo jetson_clocks !!!)
+
 deepstream-app -c deepstream_app_config_ssd.txt
