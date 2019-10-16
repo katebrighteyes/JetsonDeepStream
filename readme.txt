@@ -21,10 +21,15 @@ tar -jxvf deepstream_sdk_v4.0_jetson.tbz2
 
 **********************************************************************
 
-하지만 지금은 scp 로 받아서 사용해야합니다. !!!!cd Downloads
+하지만 지금은 scp 로 받아서 사용해야합니다. !!!!
+
+cd Downloads
 
 (화이트보드 참고)
 
+그리고 깃헙 다운로드
+
+git clone https://github.com/katebrighteyes/JetsonDeepStream
 
 그리고 다음 진행
 
