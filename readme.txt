@@ -17,7 +17,7 @@ Download .tar
 
 2. extract
 
-tar -jxvf deepstream_sdk_v4.0_jetson.tbz2 
+tar -jxvf deepstream_sdk_v4.0.1_jetson.tbz2 
 
 **********************************************************************
 
@@ -53,18 +53,24 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 cd
 
-sudo mv Downloads/deepstream_sdk_v4.0_jetson ./
+sudo mv Downloads/deepstream_sdk_v4.0.1_jetson ./
 
-cd deepstream_sdk_v4.0_jetson/
+cd deepstream_sdk_v4.0.1_jetson/
 sudo tar -xvf binaries.tbz2 -C /
 sudo ./install.sh
 sudo ldconfig
 
 5. Check !!
 
-ls /opt/nvidia/deepstream/deepstream-4.0/sources/
+cd /opt/nvidia/deepstream/deepstream-4.0/
 
-* 여기서 혹시 sources 가 안보이면 sources 와 samples 를 직접 복사한다.
+ls
+
+sudo chmod 777 ./
+
+cp -rf ~/deepstream_sdk_v4.0.1_jetson/sources ./
+cp -rf ~/deepstream_sdk_v4.0.1_jetson/samples/ ./
+ls
 
 cd /opt/nvidia/deepstream/deepstream-4.0/sources/objectDetector_SSD
 
