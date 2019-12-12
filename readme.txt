@@ -17,18 +17,11 @@ Download .tar
 
 2. extract
 
+cd Downloads
+
 tar -jxvf deepstream_sdk_v4.0.1_jetson.tbz2 
 
 **********************************************************************
-
-하지만 지금은 scp 로 받아서 사용해야합니다. !!!!
-
-cd Downloads
-
-(화이트보드 참고)
-scp nvidia@[아이피]:/home/nvidia/TOD/deepstream_sdk_v4.0_jetson.zip .
-
-unzip deepstream_sdk_v4.0_jetson.zip -d deepstream_sdk_v4.0_jetson
 
 그리고 깃헙 다운로드
 
