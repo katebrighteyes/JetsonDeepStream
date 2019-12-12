@@ -12,7 +12,7 @@
 
 https://developer.nvidia.com/deepstream-download
 
-DeepStream 4.0 for Jetson
+DeepStream 4.0.1 for Jetson
 Download .tar
 
 2. extract
