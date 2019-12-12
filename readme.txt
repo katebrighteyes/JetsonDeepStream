@@ -81,7 +81,7 @@ make -C nvdsinfer_custom_impl_ssd
 cp ~/Downloads/JetsonDeepStream/ssdufftest/* ./
 
 *zip 파일은 풀어준다.
-mv sample_ssd_relu6/sample_ssd_relu6.uff ./
+unzip sample_ssd_relu6.zip
 
 ls 
 --> sample_ssd_relu6.uff 파일을 확인한다.
