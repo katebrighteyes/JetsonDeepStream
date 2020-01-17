@@ -1,15 +1,3 @@
-2019. 10.16 기준
-1. Jetpack 4.2.1 이상에서만 Xavier, TX2, Nano 가 모두 DS 가능
-
-2. Tx2, Nano 의 경우 4.2.1 + DS 4.0 (다운로드 버전) -> 정상 동작
-
-3. Xavier, TX2, Nano 모두 4.2.2 + DS 4.0.1 (다운로드 버전)-> 정상 동작
-
-
-따라서 추후에는 아래와 같이 사이트에서 다운받아서 사용하도록 한다.
-
-1. visit the website and download deepstream_sdk_v4.0_1_jetson.tbz2
-
 https://developer.nvidia.com/deepstream-download
 
 DeepStream 4.0.1 for Jetson
