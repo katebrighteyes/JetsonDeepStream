@@ -103,7 +103,7 @@ export CUDA_VER=10.0
 
 make -C nvdsinfer_custom_impl_Yolo
 
-deepstream-app -c deepstream_app_config_yoloV3.txt
+deepstream-app -c deepstream_app_config_yoloV3_tiny.txt
 
 deepstream-app -c deepstream_app_config_yoloV2_tiny.txt
   
@@ -111,7 +111,11 @@ deepstream-app -c deepstream_app_config_yoloV2_tiny.txt
 
 deepstream-app -c deepstream_app_config_yoloV2.txt
 
-deepstream-app -c deepstream_app_config_yoloV3_tiny.txt
+deepstream-app -c deepstream_app_config_yoloV3.txt
+
+
+
+
   
 
 
