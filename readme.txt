@@ -78,3 +78,42 @@ ls
 (잊지말자 파워 맥스 밎추고 sudo jetson_clocks !!!)
 
 deepstream-app -c deepstream_app_config_ssd.txt
+
+-----------------------------------------------------
+
+# usb Camera TEST
+
+## Check you usb camera exits and what device number is.
+
+ls /dev/video*
+
+## After check number, you must check 44 line of the "deepstream_app_config_ssd_usb_f32.txt" file 
+
+deepstream-app -c deepstream_app_config_ssd_usb_f32.txt
+
+-----------------------------------------------------------------------
+
+# Yolo DeapStream plugin Test
+
+cd /opt/nvidia/deepstream/deepstream-4.0/sources/objectDetector_Yolo
+
+./prebuild.sh
+
+export CUDA_VER=10.0
+
+make -C nvdsinfer_custom_impl_Yolo
+
+deepstream-app -c deepstream_app_config_yoloV3.txt
+
+deepstream-app -c deepstream_app_config_yoloV2_tiny.txt
+  
+# If you don't case slow FPS ...
+
+deepstream-app -c deepstream_app_config_yoloV2.txt
+
+deepstream-app -c deepstream_app_config_yoloV3_tiny.txt
+  
+
+
+
+
