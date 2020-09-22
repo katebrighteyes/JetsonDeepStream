@@ -1,0 +1,134 @@
+https://developer.nvidia.com/deepstream-download
+
+DeepStream 5.0 for Jetson
+Download .tar
+
+2. extract
+
+cd Downloads
+
+**********************************************************************
+
+그리고 깃헙 다운로드
+
+git clone https://github.com/katebrighteyes/JetsonDeepStream
+
+그리고 다음 진행
+
+3. Install Dependency
+
+sudo apt-get update
+
+sudo apt install \
+    libssl1.0.0 \
+    libgstreamer1.0-0 \
+    gstreamer1.0-tools \
+    gstreamer1.0-plugins-good \
+    gstreamer1.0-plugins-bad \
+    gstreamer1.0-plugins-ugly \
+    gstreamer1.0-libav \
+    libgstrtspserver-1.0-0 \
+    libjansson4=2.11-1
+
+To install librdkafka (to enable Kafka protocol adaptor for message broker)
+
+1.Clone the librdkafka repository from GitHub:
+
+$ git clone https://github.com/edenhill/librdkafka.git
+
+2.Configure and build the library:
+
+$ cd librdkafka
+$ git reset --hard 7101c2310341ab3f4675fc565f64f0967e135a6a
+./configure
+$ make
+$ sudo make install
+
+3.Copy the generated libraries to the deepstream directory:
+
+$ sudo mkdir -p /opt/nvidia/deepstream/deepstream-5.0/lib 
+$ sudo cp /usr/local/lib/librdkafka* /opt/nvidia/deepstream/deepstream-5.0/lib
+
+To install latest NVIDIA V4L2 GStreamer plugin
+
+4.Open the apt source configuration file in a text editor, for example:
+
+$ sudo vi /etc/apt/sources.list.d/nvidia-l4t-apt-source.list
+
+5.Change the repository name and download URL in the deb commands shown below:
+
+deb https://repo.download.nvidia.com/jetson/common r32.4 main
+deb https://repo.download.nvidia.com/jetson/<platform> r32.4 main
+Where <platform> identifies the platform’s processor:
+•t186 for Jetson TX2 series
+•t194 for Jetson AGX Xavier series or Jetson Xavier NX
+•t210 for Jetson Nano or Jetson TX1
+
+For example, if your platform is Jetson Xavier NX:
+•deb https://repo.download.nvidia.com/jetson/common r32.4 main
+•deb https://repo.download.nvidia.com/jetson/t194 r32.4 main
+
+6.Save and close the source configuration file.
+
+7.Enter the commands:
+
+$ sudo apt update
+$ sudo apt install --reinstall nvidia-l4t-gstreamer
+
+
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
+======================================================================
+4. Install DeepStream
+
+$ sudo tar -xvf deepstream_sdk_5.0_jetson.tbz2 -C /
+$ cd /opt/nvidia/deepstream/deepstream-5.0
+$ sudo ./install.sh
+$ sudo ldconfig
+
+
+5. Check !!
+
+cd /opt/nvidia/deepstream/deepstream-5.0/
+
+
+cd /opt/nvidia/deepstream/deepstream-5.0/sources/objectDetector_SSD
+
+* 참고 ) 즉, 이 위치에서 빌드하고 실행하면 된다.
+
+nvidia@nvidia:/opt/nvidia/deepstream/deepstream-4.0/sources/objectDetector_SSD
+
+sudo chmod 777 -R ./
+
+export CUDA_VER=10.2
+
+make -C nvdsinfer_custom_impl_ssd
+
+*다운로드 폴더에 label 텍스트와 uff 가 있다면 현재 폴더로 옮겨준다.
+
+cp ~/Downloads/JetsonDeepStream/ssdufftest/* ./
+
+*zip 파일은 풀어준다.
+unzip sample_ssd_relu6.zip
+
+ls 
+--> sample_ssd_relu6.uff 파일을 확인한다.
+
+*실행
+(잊지말자 파워 맥스 밎추고 sudo jetson_clocks !!!)
+
+deepstream-app -c deepstream_app_config_ssd.txt
+
+-----------------------------------------------------
+
+# usb Camera TEST
+
+## Check you usb camera exits and what device number is.
+
+ls /dev/video*
+
+## After check number, you must check 44 line of the "deepstream_app_config_ssd_usb_f32.txt" file 
+
+deepstream-app -c deepstream_app_config_ssd_usb_f32.txt
+
+-----------------------------------------------------------------------
