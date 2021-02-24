@@ -46,7 +46,7 @@ $ sudo cp /usr/local/lib/librdkafka* /opt/nvidia/deepstream/deepstream-5.0/lib
 
 cd Downloads
 
-$ sudo tar -xvf deepstream_sdk_v5.0.1_x86_64.tbz2 -C /
+$ sudo tar -xvf deepstream_sdk_v5.0.1_jetson.tbz2 -C /
 $ cd /opt/nvidia/deepstream/deepstream-5.0/
 $ sudo ./install.sh
 $ sudo ldconfig
